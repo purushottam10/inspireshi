@@ -1,0 +1,20 @@
+<section class="testimonials-section">
+  <div class="testimonials-container">
+    <div class="testimonials-header">
+      <p class="testimonials-label">Client Testimonials</p>
+      <h2 class="testimonials-title">Success Stories</h2>
+      <div class="star-rating">
+        <span *ngFor="let star of getStars(currentTestimonialData.rating)" class="star">★</span>
+      </div>
+    </div>
+    <div class="testimonial-content">
+      <button class="nav-arrow nav-arrow-left" (click)="prevTestimonial()" aria-label="Previous testimonial">
+        ←
+      </button>
+      <p class="testimonial-text">{{ currentTestimonialData.text }}</p>
+      <button class="nav-arrow nav-arrow-right" (click)="nextTestimonial()" aria-label="Next testimonial">
+        →
+      </button>
+    </div>
+  </div>
+</section>

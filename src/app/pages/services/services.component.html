@@ -1,0 +1,39 @@
+<section class="services-section">
+  <div class="services-container">
+    <header class="services-header">
+      <h1 class="services-title">{{ config.sectionTitle }}</h1>
+      @if (config.sectionDescription) {
+        <p class="services-description">{{ config.sectionDescription }}</p>
+      }
+    </header>
+
+    <div class="services-grid">
+      @for (service of config.services; track service.id || service.title) {
+        <article class="service-card">
+          @if (hasImage(service.imageUrl)) {
+            <div class="service-image-wrap">
+              <img
+                [src]="service.imageUrl"
+                [alt]="service.title"
+                class="service-image"
+                loading="lazy"
+              />
+            </div>
+          }
+          <div class="service-body">
+            <h2 class="service-title">{{ service.title }}</h2>
+            <p class="service-description">{{ service.description }}</p>
+          </div>
+        </article>
+      }
+    </div>
+
+    <div class="get-quote-block">
+      <h2 class="get-quote-title">Get a Quote</h2>
+      <p class="get-quote-text">
+        Ready to bring your ideas to life? Get in touch and we’ll create a plan that fits your goals and budget.
+      </p>
+      <a routerLink="/contact" class="get-quote-btn">Contact Us</a>
+    </div>
+  </div>
+</section>
