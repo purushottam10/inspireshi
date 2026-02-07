@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { SOCIAL_LINKS } from '../../config/social-links.config';
 
 @Component({
   selector: 'app-footer',
@@ -11,6 +12,7 @@ import { CommonModule } from '@angular/common';
 })
 export class FooterComponent {
   newsletterForm: FormGroup;
+  socialLinks = SOCIAL_LINKS;
 
   constructor(private fb: FormBuilder) {
     this.newsletterForm = this.fb.group({
