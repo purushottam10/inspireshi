@@ -1,6 +1,6 @@
 .footer {
   background-color: #f0f4e8;
-  padding: 3rem 2rem 2rem;
+  padding: 3rem 2rem 0;
   position: relative;
   margin-top: 4rem;
 }
@@ -8,180 +8,126 @@
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   gap: 3rem;
+  padding-bottom: 2.5rem;
 }
 
-.company-info .company-name {
-  font-size: 2rem;
+/* Brand / left column */
+.footer-brand .company-name {
+  font-size: 1.6rem;
   font-weight: 700;
-  color: #333;
-  margin-bottom: 1.5rem;
-}
-
-.contact-info p {
-  color: #555;
-  margin-bottom: 0.5rem;
-  font-size: 0.95rem;
-}
-
-.social-legal {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.social-icons {
-  display: flex;
-  gap: 1rem;
-}
-
-.social-icon {
-  color: #333;
-  transition: color 0.3s ease;
-}
-
-.social-icon:hover {
-  color: #666;
-}
-
-.legal-links {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.legal-links a {
-  color: #555;
-  font-size: 0.9rem;
-  transition: color 0.3s ease;
-}
-
-.legal-links a:hover {
-  color: #333;
-}
-
-.newsletter-title {
-  font-size: 1.2rem;
-  font-weight: 600;
   color: #333;
   margin-bottom: 1rem;
 }
 
-.newsletter-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.form-group label {
-  color: #555;
+.contact-info p {
+  color: #666;
+  margin-bottom: 0.35rem;
   font-size: 0.9rem;
+  line-height: 1.5;
 }
 
-.form-group input[type="email"] {
-  border: none;
-  border-bottom: 1px solid #ccc;
-  background: transparent;
-  padding: 0.5rem 0;
-  font-size: 1rem;
-  color: #333;
-  position: relative;
-}
-
-.form-group input[type="email"]:focus {
-  outline: none;
-  border-bottom-color: #333;
-}
-
-.form-group input[type="email"].error {
-  border-bottom-color: #ff4444;
-}
-
-.error-icon {
-  color: #ff4444;
-  font-size: 0.8rem;
-  margin-top: -1.5rem;
-  margin-left: auto;
-  position: relative;
-  top: -1.5rem;
-}
-
-.checkbox-group label {
+/* Right column */
+.footer-right {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  cursor: pointer;
 }
 
-.checkbox-group input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
-  cursor: pointer;
+.social-legal-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
 }
 
-.submit-btn {
-  background-color: #333;
-  color: #fff;
-  padding: 0.75rem 2rem;
-  border-radius: 4px;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
-  align-self: flex-start;
+.social-icons {
+  display: flex;
+  gap: 0.95rem;
+  align-items: center;
 }
 
-.submit-btn:hover:not(:disabled) {
-  background-color: #555;
+.social-icon {
+  color: #444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.25s ease, transform 0.25s ease;
 }
 
-.submit-btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
+.social-icon:hover {
+  color: #7c3aed;
+  transform: translateY(-2px);
 }
 
-.footer-divider {
-  width: 100%;
-  height: 1px;
-  background-color: #333;
-  margin-top: 2rem;
+.legal-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.legal-links a {
+  color: #666;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.legal-links a:hover {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* Bottom bar */
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0 1.25rem;
+  border-top: 1px solid #d6dcca;
+  position: relative;
+}
+
+.footer-copy {
+  font-size: 0.82rem;
+  color: #888;
 }
 
 .scroll-top {
-  position: absolute;
-  top: 1rem;
-  right: 2rem;
   background-color: #8b5cf6;
   color: white;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+  position: absolute;
+  right: 0;
 }
 
 .scroll-top:hover {
   background-color: #7c3aed;
+  transform: translateY(-2px);
 }
 
-@media (max-width: 968px) {
+@media (max-width: 768px) {
   .footer-container {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 2rem;
   }
 
-  .scroll-top {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    top: auto;
+  .footer-right {
+    align-items: flex-start;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
   }
 }

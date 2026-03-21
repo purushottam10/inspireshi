@@ -2,13 +2,9 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { CONTACT_FORM_ACCESS_KEY } from '../../config/contact-form.config';
+import { SOCIAL_LINKS } from '../../config/social-links.config';
 
-/** Update these URLs to point to your actual social media pages. */
-export interface SocialLink {
-  name: string;
-  url: string;
-  icon: 'instagram' | 'facebook' | 'linkedin' | 'youtube' | 'pinterest';
-}
+export type { SocialLink } from '../../config/social-links.config';
 
 const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
 
@@ -24,14 +20,7 @@ export class ContactComponent {
   submitting = false;
   submitMessage: 'success' | 'error' | null = null;
 
-  /** Social media links – update URLs to your profiles. Remove or add entries as needed. */
-  socialLinks: SocialLink[] = [
-    { name: 'Instagram', url: 'https://www.instagram.com/inspireshi_media/', icon: 'instagram' },
-    { name: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61586075961595', icon: 'facebook' },
-    { name: 'LinkedIn', url: 'https://www.linkedin.com/company/inspireshi-media', icon: 'linkedin' },
-    { name: 'YouTube', url: 'https://www.youtube.com/@InspireshiMedia', icon: 'youtube' },
-    { name: 'Pinterest', url: 'https://in.pinterest.com/inspireshi/', icon: 'pinterest' },
-  ];
+  socialLinks = SOCIAL_LINKS;
 
   constructor(private fb: FormBuilder) {
     this.contactForm = this.fb.group({
@@ -89,6 +78,7 @@ export class ContactComponent {
         } else {
           this.submitMessage = 'error';
         }
+        
       })
       .catch(() => {
         this.submitting = false;

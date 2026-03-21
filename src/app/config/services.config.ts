@@ -55,5 +55,11 @@ export const SERVICES_CONFIG: ServicesSectionConfig = {
       description: 'We bring ideas to life through dynamic motion graphics that simplify messages, grab attention, and make your brand more memorable.',
       imageUrl: '',
     },
+    {
+      id: 'seo',
+      title: 'Search Engine Optimization (SEO)',
+      description: 'Boost your website\'s visibility on Google and drive organic traffic with our advanced SEO strategies. From keyword research to technical SEO, we ensure your brand ranks higher and stays ahead of competitors.',
+      imageUrl: '',
+    },
   ],
 };
